@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Felipe Vera Perdomo | Portafolio Web</title>
+    <meta name="description" content="Portafolio web de Daniel Felipe Vera Perdomo, Desarrollador de Software.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo neon-text">DFVP</a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#hero" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="#about" data-es="Sobre Mí" data-en="About">Sobre Mí</a></li>
+                    <li><a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                    <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="lang-toggle" class="neon-button-sm" aria-label="Cambiar idioma">
+                        <i class="bi bi-translate"></i> <span id="lang-text">EN</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in-section">
+        <div class="hero-content">
+            <p class="greeting" data-es="Hola, soy" data-en="Hello, I'm">Hola, soy</p>
+            <h1 class="name-title neon-text-glow" id="typewriter">Daniel Felipe Vera Perdomo</h1>
+            <h2 class="job-title" data-es="Desarrollador de Software | Tecnólogo en Análisis y Desarrollo de Software" data-en="Software Developer | Technologist in Software Analysis and Development">Desarrollador de Software | Tecnólogo en Análisis y Desarrollo de Software</h2>
+            <p class="subtitle" data-es="Transformando datos en soluciones geoespaciales y financieras" data-en="Transforming data into geospatial and financial solutions">Transformando datos en soluciones geoespaciales y financieras</p>
+            
+            <div class="hero-cta">
+                <a href="#projects" class="neon-button" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
+                <button id="open-cv-modal" class="neon-button outline">
+                    <span data-es="Ver / Descargar CV" data-en="View / Download CV">Ver / Descargar CV</span>
+                </button>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/DF-VeraP" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-container">
+                    <div class="image-placeholder neon-border-box" style="overflow: hidden; padding: 0;">
+                        <img src="Imagenes/Perfil.jpeg" alt="Daniel Felipe Vera Perdomo" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title neon-text" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+                    <p class="bio" data-es="Soy un desarrollador de software apasionado por la resolución de problemas complejos. Me especializo en el análisis de datos geoespaciales con PostGIS y en la creación de sistemas financieros robustos. Mi enfoque principal es dar una opinión diferente, apoyar al equipo y aprender constantemente. Si no entiendo algo, investigo hasta encontrar la solución." data-en="I'm a software developer passionate about solving complex problems. I specialize in geospatial data analysis with PostGIS and in building robust financial systems. My main focus is to provide a different perspective, support the team, and keep learning continuously. If I don't understand something, I research until I find the solution.">
+                        Soy un desarrollador de software apasionado por la resolución de problemas complejos. Me especializo en el análisis de datos geoespaciales con PostGIS y en la creación de sistemas financieros robustos. Mi enfoque principal es dar una opinión diferente, apoyar al equipo y aprender constantemente. Si no entiendo algo, investigo hasta encontrar la solución.
+                    </p>
+                    
+                    <div class="skills">
+                        <h3 data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h3>
+                        <div class="badges">
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Node.js</span>
+                            <span class="badge">Express</span>
+                            <span class="badge">PostgreSQL</span>
+                            <span class="badge">PostGIS</span>
+                            <span class="badge">QGIS</span>
+                            <span class="badge">Git</span>
+                            <span class="badge">GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="education">
+                        <h3 data-es="Educación" data-en="Education">Educación</h3>
+                        <p data-es="Tecnólogo en Análisis y Desarrollo de Software" data-en="Technologist in Software Analysis and Development">Tecnólogo en Análisis y Desarrollo de Software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects fade-in-section">
+        <div class="container">
+            <h2 class="section-title text-center neon-text" data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</h2>
+            
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <article class="project-card neon-border-box">
+                    <div class="card-image" style="padding: 0; overflow: hidden;">
+                        <img src="Imagenes/Captura de pantalla 2026-08-13 221102.png" alt="SIGI Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SIGI - Sistema de Información Geográfica de Incidentes</h3>
+                        <p class="card-desc" data-es="Sistema de análisis de incidentes en el rango geográfico de Florencia, Caquetá. Permite visualizar y analizar la distribución espacial de incidentes para la toma de decisiones." data-en="Incident analysis system in the geographic range of Florencia, Caquetá. Allows visualizing and analyzing the spatial distribution of incidents for decision-making.">Sistema de análisis de incidentes en el rango geográfico de Florencia, Caquetá. Permite visualizar y analizar la distribución espacial de incidentes para la toma de decisiones.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span><span>CSS3</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>PostGIS</span><span>QGIS</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="status deployed"><i class="bi bi-cloud-check"></i> <span data-es="Desplegado" data-en="Deployed">Desplegado</span></span>
+                            <span class="role"><i class="bi bi-person-gear"></i> <span data-es="Desarrollador principal" data-en="Lead Developer">Desarrollador principal</span></span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://sigi.verapd.xyz/" target="_blank" class="card-btn primary"><i class="bi bi-globe"></i> Web</a>
+                            <a href="https://github.com/DF-VeraP/SIGI" target="_blank" class="card-btn secondary"><i class="bi bi-github"></i> Código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="project-card neon-border-box">
+                    <div class="card-image placeholder-img">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">COOPMONEY - Sistema Multicooperativa</h3>
+                        <p class="card-desc" data-es="Sistema de gestión financiera para cooperativas, enfocado en ahorro y crédito. Permite administrar socios, cuentas de ahorro, préstamos y generar reportes." data-en="Financial management system for cooperatives, focused on savings and credit. Allows managing members, savings accounts, loans, and generating reports.">Sistema de gestión financiera para cooperativas, enfocado en ahorro y crédito. Permite administrar socios, cuentas de ahorro, préstamos y generar reportes.</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span><span>CSS3</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="status complete"><i class="bi bi-check-circle"></i> <span data-es="Completo" data-en="Completed">Completo</span></span>
+                            <span class="role"><i class="bi bi-person-gear"></i> <span data-es="Desarrollador principal" data-en="Lead Developer">Desarrollador principal</span></span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://github.com/DF-VeraP/COOPMONEY" target="_blank" class="card-btn secondary w-100"><i class="bi bi-github"></i> Código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="project-card neon-border-box empty-state">
+                    <div class="card-image placeholder-img empty">
+                        <i class="bi bi-cone-striped"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title" data-es="Próximo Proyecto" data-en="Next Project">Próximo Proyecto</h3>
+                        <p class="card-desc" data-es="Espacio reservado para mi próximo proyecto. ¡Próximamente!" data-en="Space reserved for my next project. Coming soon!">Espacio reservado para mi próximo proyecto. ¡Próximamente!</p>
+                        <div class="tech-stack">
+                            <span data-es="En desarrollo" data-en="In development">En desarrollo</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="status upcoming"><i class="bi bi-hourglass-split"></i> <span data-es="Próximamente" data-en="Coming Soon">Próximamente</span></span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title neon-text" data-es="Contáctame" data-en="Contact Me">Contáctame</h2>
+                    <p class="contact-subtitle" data-es="¿Tienes un proyecto en mente? Hablemos" data-en="Have a project in mind? Let's talk">¿Tienes un proyecto en mente? Hablemos</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="bi bi-envelope-at neon-icon"></i>
+                            <a href="mailto:d.verap@ejemplo.com">d.verap@ejemplo.com</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-github neon-icon"></i>
+                            <a href="https://github.com/DF-VeraP" target="_blank">github.com/DF-VeraP</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-linkedin neon-icon"></i>
+                            <a href="#" target="_blank">LinkedIn Profile</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-container neon-border-box">
+                    <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
+                            <input type="text" id="name" name="name" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-es="Asunto" data-en="Subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="neon-button w-100">
+                            <span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span> <i class="bi bi-send"></i>
+                        </button>
+                        <p id="form-status" class="form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">
+                    © 2026 Daniel Felipe Vera Perdomo - <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span>
+                </p>
+                <div class="footer-links">
+                    <a href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
+                    <a href="#about" data-es="Sobre Mí" data-en="About">Sobre Mí</a>
+                    <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CV Modal -->
+    <div id="cv-modal" class="modal">
+        <div class="modal-content neon-border-box">
+            <div class="modal-header">
+                <h3 class="neon-text" data-es="Mi Hoja de Vida" data-en="My Resume">Mi Hoja de Vida</h3>
+                <button id="close-cv-modal" class="close-btn" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- iframe to display PDF -->
+                <iframe src="CV/HV_FelipeVera.pdf" style="width: 100%; height: 65vh; min-height: 300px; border: none; display: block;"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="CV/HV_FelipeVera.pdf" download="Daniel_Vera_CV.pdf" class="neon-button">
+                    <i class="bi bi-download"></i> <span data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
