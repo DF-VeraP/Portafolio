@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  portafolio_web:
+    image: nginx:alpine
+    container_name: portafolio_daniel
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    restart: always
+    # Si utilizas la misma red del proyecto SIGI en el VPS, descomenta las siguientes líneas
+    # networks:
+    #   - proxy_network
+
+# networks:
+#   proxy_network:
+#     external: true
