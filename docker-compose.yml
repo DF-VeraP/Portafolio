@@ -6,11 +6,6 @@ services:
     container_name: portafolio_daniel
     volumes:
       - ./:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"  # Expone el portafolio en el puerto 8080 de tu VPS
     restart: always
-    # Si utilizas la misma red del proyecto SIGI en el VPS, descomenta las siguientes líneas
-    # networks:
-    #   - proxy_network
-
-# networks:
-#   proxy_network:
-#     external: true
