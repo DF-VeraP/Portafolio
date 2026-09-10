@@ -108,12 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(el);
     });
 
-    // 5. Contact Form Handler (mailto)
+    // 5. Contact Form Handler (FormSubmit AJAX)
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const name = document.getElementById('name').value.trim();
@@ -121,29 +122,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
             
-            const fullSubject = encodeURIComponent(`[Contacto Portafolio] ${subject}`);
-            const body = encodeURIComponent(
-                `Hola Daniel,\n\n` +
-                `Nombre: ${name}\n` +
-                `Correo del remitente: ${email}\n\n` +
-                `Mensaje:\n${message}\n`
-            );
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = currentLang === 'es'
+                    ? '<span>Enviando mensaje...</span> <i class="bi bi-hourglass-split"></i>'
+                    : '<span>Sending message...</span> <i class="bi bi-hourglass-split"></i>';
+            }
             
-            // Trigger mailto client
-            window.location.href = `mailto:pvfduni@gmail.com?subject=${fullSubject}&body=${body}`;
-            
-            formStatus.textContent = currentLang === 'es' 
-                ? 'Abriendo tu aplicación de correo...' 
-                : 'Opening your mail client...';
-            formStatus.className = 'form-status success';
-            
-            contactForm.reset();
-            
-            // Clear message after 4 seconds
-            setTimeout(() => {
-                formStatus.textContent = '';
-                formStatus.className = 'form-status';
-            }, 4000);
+            formStatus.textContent = '';
+            formStatus.className = 'form-status';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/pvfduni@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        _subject: `[Contacto Portafolio] ${subject}`,
+                        message: message,
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    formStatus.textContent = currentLang === 'es'
+                        ? '¡Mensaje enviado con éxito! Te responderé pronto.'
+                        : 'Message sent successfully! I will reply soon.';
+                    formStatus.className = 'form-status success';
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.message || 'Error al enviar');
+                }
+            } catch (error) {
+                console.error('Error al enviar formulario:', error);
+                formStatus.textContent = currentLang === 'es'
+                    ? 'Hubo un error al enviar el mensaje. Puedes escribir directamente a pvfduni@gmail.com.'
+                    : 'Error sending message. You can write directly to pvfduni@gmail.com.';
+                formStatus.className = 'form-status error';
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = currentLang === 'es'
+                        ? '<span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span> <i class="bi bi-send"></i>'
+                        : '<span data-es="Enviar Mensaje" data-en="Send Message">Send Message</span> <i class="bi bi-send"></i>';
+                }
+
+                setTimeout(() => {
+                    formStatus.textContent = '';
+                    formStatus.className = 'form-status';
+                }, 6000);
+            }
         });
     }
 
