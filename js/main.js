@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(el);
     });
 
-    // 5. Contact Form Validation
+    // 5. Contact Form Handler (mailto)
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
@@ -116,17 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Basic validation is handled by HTML5 'required', but here we simulate success.
-            formStatus.textContent = currentLang === 'es' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!';
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            const fullSubject = encodeURIComponent(`[Contacto Portafolio] ${subject}`);
+            const body = encodeURIComponent(
+                `Hola Daniel,\n\n` +
+                `Nombre: ${name}\n` +
+                `Correo del remitente: ${email}\n\n` +
+                `Mensaje:\n${message}\n`
+            );
+            
+            // Trigger mailto client
+            window.location.href = `mailto:pvfduni@gmail.com?subject=${fullSubject}&body=${body}`;
+            
+            formStatus.textContent = currentLang === 'es' 
+                ? 'Abriendo tu aplicación de correo...' 
+                : 'Opening your mail client...';
             formStatus.className = 'form-status success';
             
             contactForm.reset();
             
-            // Clear message after 3 seconds
+            // Clear message after 4 seconds
             setTimeout(() => {
                 formStatus.textContent = '';
                 formStatus.className = 'form-status';
-            }, 3000);
+            }, 4000);
         });
     }
 
